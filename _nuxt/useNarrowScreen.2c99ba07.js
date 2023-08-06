@@ -1,0 +1,1 @@
+import{y as a,h as n}from"./entry.072bc2c9.js";import{n as i}from"./index.fe518cef.js";function d(e,r){return a(e,u=>{u!==void 0&&(r.value=u)}),n(()=>e.value===void 0?r.value:e.value)}const m=()=>{const{width:e}=i();return n(()=>e.value<1e3)};export{m as a,d as u};
