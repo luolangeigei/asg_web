@@ -1,0 +1,1 @@
+import{d as t}from"./entry.8f536b28.js";const o=(e,...r)=>typeof e=="function"?e(...r):typeof e=="string"?t(e):typeof e=="number"?t(String(e)):null,n=new WeakSet;function s(e){n.add(e)}function u(e){return!n.has(e)}export{u as e,s as m,o as r};
