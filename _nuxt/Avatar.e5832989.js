@@ -1,0 +1,30 @@
+import{i as N,q,v as w,c as G,e as $,Z as D,g as F,a0 as J,f as A,u as U,j as I,x as X,k as Y,a1 as Z,y as Q,z as ee}from"./Button.b8ae23dc.js";import{t as oe}from"./Tag.82b04240.js";import{V as re}from"./use-message.66bdeb61.js";import{f as te,r as x,m as B,h as O,E as ne,x as se,J as ae,l as ie,q as R}from"./entry.6528f58e.js";const M=N&&"loading"in document.createElement("img"),le=(e={})=>{var l;const{root:i=null}=e;return{hash:`${e.rootMargin||"0px 0px 0px 0px"}-${Array.isArray(e.threshold)?e.threshold.join(","):(l=e.threshold)!==null&&l!==void 0?l:"0"}`,options:Object.assign(Object.assign({},e),{root:(typeof i=="string"?document.querySelector(i):i)||document.documentElement})}},_=new WeakMap,P=new WeakMap,k=new WeakMap,de=(e,l,i)=>{if(!e)return()=>{};const t=le(l),{root:d}=t.options;let a;const c=_.get(d);c?a=c:(a=new Map,_.set(d,a));let f,n;a.has(t.hash)?(n=a.get(t.hash),n[1].has(e)||(f=n[0],n[1].add(e),f.observe(e))):(f=new IntersectionObserver(h=>{h.forEach(g=>{if(g.isIntersecting){const z=P.get(g.target),p=k.get(g.target);z&&z(),p&&(p.value=!0)}})},t.options),f.observe(e),n=[f,new Set([e])],a.set(t.hash,n));let v=!1;const b=()=>{v||(P.delete(e),k.delete(e),v=!0,n[1].has(e)&&(n[0].unobserve(e),n[1].delete(e)),n[1].size<=0&&a.delete(t.hash),a.size||_.delete(d))};return P.set(e,b),k.set(e,i),b},ce=e=>{const{borderRadius:l,avatarColor:i,cardColor:t,fontSize:d,heightTiny:a,heightSmall:c,heightMedium:f,heightLarge:n,heightHuge:v,modalColor:b,popoverColor:h}=e;return{borderRadius:l,fontSize:d,border:`2px solid ${t}`,heightTiny:a,heightSmall:c,heightMedium:f,heightLarge:n,heightHuge:v,color:w(t,i),colorModal:w(b,i),colorPopover:w(h,i)}},ue={name:"Avatar",common:q,self:ce},fe=ue,ve=G("n-avatar-group"),he=$("avatar",`
+ width: var(--n-merged-size);
+ height: var(--n-merged-size);
+ color: #FFF;
+ font-size: var(--n-font-size);
+ display: inline-flex;
+ position: relative;
+ overflow: hidden;
+ text-align: center;
+ border: var(--n-border);
+ border-radius: var(--n-border-radius);
+ --n-merged-color: var(--n-color);
+ background-color: var(--n-merged-color);
+ transition:
+ border-color .3s var(--n-bezier),
+ background-color .3s var(--n-bezier),
+ color .3s var(--n-bezier);
+`,[D(F("&","--n-merged-color: var(--n-color-modal);")),J(F("&","--n-merged-color: var(--n-color-popover);")),F("img",`
+ width: 100%;
+ height: 100%;
+ `),A("text",`
+ white-space: nowrap;
+ display: inline-block;
+ position: absolute;
+ left: 50%;
+ top: 50%;
+ `),$("icon",`
+ vertical-align: bottom;
+ font-size: calc(var(--n-merged-size) - 6px);
+ `),A("text","line-height: 1.25")]),ge=Object.assign(Object.assign({},I.props),{size:[String,Number],src:String,circle:{type:Boolean,default:void 0},objectFit:String,round:{type:Boolean,default:void 0},bordered:{type:Boolean,default:void 0},onError:Function,fallbackSrc:String,intersectionObserverOptions:Object,lazy:Boolean,onLoad:Function,renderPlaceholder:Function,renderFallback:Function,imgProps:Object,color:String}),ye=te({name:"Avatar",props:ge,setup(e){const{mergedClsPrefixRef:l,inlineThemeDisabled:i}=U(e),t=x(!1);let d=null;const a=x(null),c=x(null),f=()=>{const{value:o}=a;if(o&&(d===null||d!==o.innerHTML)){d=o.innerHTML;const{value:r}=c;if(r){const{offsetWidth:u,offsetHeight:s}=r,{offsetWidth:m,offsetHeight:j}=o,L=.9,E=Math.min(u/m*L,s/j*L,1);o.style.transform=`translateX(-50%) translateY(-50%) scale(${E})`}}},n=B(ve,null),v=O(()=>{const{size:o}=e;if(o)return o;const{size:r}=n||{};return r||"medium"}),b=I("Avatar","-avatar",he,fe,e,l),h=B(oe,null),g=O(()=>{if(n)return!0;const{round:o,circle:r}=e;return o!==void 0||r!==void 0?o||r:h?h.roundRef.value:!1}),z=O(()=>n?!0:e.bordered||!1),p=o=>{var r;if(!S.value)return;t.value=!0;const{onError:u,imgProps:s}=e;(r=s==null?void 0:s.onError)===null||r===void 0||r.call(s,o),u&&u(o)};ne(()=>e.src,()=>t.value=!1);const H=O(()=>{const o=v.value,r=g.value,u=z.value,{color:s}=e,{self:{borderRadius:m,fontSize:j,color:L,border:E,colorModal:W,colorPopover:V},common:{cubicBezierEaseInOut:K}}=b.value;let C;return typeof o=="number"?C=`${o}px`:C=b.value.self[X("height",o)],{"--n-font-size":j,"--n-border":u?E:"none","--n-border-radius":r?"50%":m,"--n-color":s||L,"--n-color-modal":s||W,"--n-color-popover":s||V,"--n-bezier":K,"--n-merged-size":`var(--n-avatar-size-override, ${C})`}}),y=i?Y("avatar",O(()=>{const o=v.value,r=g.value,u=z.value,{color:s}=e;let m="";return o&&(typeof o=="number"?m+=`a${o}`:m+=o[0]),r&&(m+="b"),u&&(m+="c"),s&&(m+=Z(s)),m}),H,e):void 0,S=x(!e.lazy);se(()=>{if(M)return;let o;const r=ae(()=>{o==null||o(),o=void 0,e.lazy&&(o=de(c.value,e.intersectionObserverOptions,S))});ie(()=>{r(),o==null||o()})});const T=x(!e.lazy);return{textRef:a,selfRef:c,mergedRoundRef:g,mergedClsPrefix:l,fitTextTransform:f,cssVars:i?void 0:H,themeClass:y==null?void 0:y.themeClass,onRender:y==null?void 0:y.onRender,hasLoadError:t,handleError:p,shouldStartLoading:S,loaded:T,mergedOnLoad:o=>{var r;const{onLoad:u,imgProps:s}=e;u==null||u(o),(r=s==null?void 0:s.onLoad)===null||r===void 0||r.call(s,o),T.value=!0}}},render(){var e,l;const{$slots:i,src:t,mergedClsPrefix:d,lazy:a,onRender:c,mergedOnLoad:f,shouldStartLoading:n,loaded:v,hasLoadError:b}=this;c==null||c();let h;const g=!v&&!b&&(this.renderPlaceholder?this.renderPlaceholder():(l=(e=this.$slots).placeholder)===null||l===void 0?void 0:l.call(e));return this.hasLoadError?h=this.renderFallback?this.renderFallback():Q(i.fallback,()=>[R("img",{src:this.fallbackSrc,style:{objectFit:this.objectFit}})]):h=ee(i.default,z=>{if(z)return R(re,{onResize:this.fitTextTransform},{default:()=>R("span",{ref:"textRef",class:`${d}-avatar__text`},z)});if(t){const{imgProps:p}=this;return R("img",Object.assign(Object.assign({},p),{loading:M&&!this.intersectionObserverOptions&&a?"lazy":"eager",src:M||n||v?t:void 0,onLoad:f,"data-image-src":t,onError:this.handleError,style:[p==null?void 0:p.style,{objectFit:this.objectFit},g?{height:"0",width:"0",visibility:"hidden",position:"absolute"}:""]}))}}),R("span",{ref:"selfRef",class:[`${d}-avatar`,this.themeClass],style:this.cssVars},h,a&&g)}});export{ye as _,M as i,de as o,ce as s};
